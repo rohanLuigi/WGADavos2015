@@ -1,0 +1,26 @@
+Animal phenotype M1   M2   M3  a1  a2  b1  b2  c1  c2   
+   1      9.68   BB   AB   AA   0   2   1   1   2   0
+   3      2.29   AB   BB   BB   1   1   0   2   0   2
+  20      0.81   AA   AB   AB   2   0   1   1   1   1
+   4      3.42   AA   AB   AA   2   0   1   1   2   0
+   2      5.69   BB   BB   BB   0   2   0   2   0   2
+   5      5.92   AB   AA   AA   1   1   2   0   2   0
+   6      2.82   AB   AB   BB   1   1   1   1   0   2
+   7      5.07   BB   AB   BB   0   2   1   1   0   2
+   8      8.92   BB   BB   AA   0   2   0   2   2   0
+   9       2.4   AA   BB   AB   2   0   0   2   1   1
+  10      9.01   BB   BB   AA   0   2   0   2   2   0
+  11      4.24   AB   AB   AB   1   1   1   1   1   1
+  12      6.35   BB   AA   AB   0   2   2   0   1   1
+  13      8.92   BB   AB   AA   0   2   1   1   2   0
+  14     -0.64   AA   BB   BB   2   0   0   2   0   2
+  15      5.95   AB   AA   AA   1   1   2   0   2   0
+  16      6.13   AB   AB   AA   1   1   1   1   2   0
+  17      6.72   AB   AB   AA   1   1   1   1   2   0
+  18      4.86   AB   AB   AB   1   1   1   1   1   1
+  19      6.36   BB   BB   BB   0   2   0   2   0   2
+  21      9.67   BB   AB   AA   0   2   1   1   2   0
+  22      7.74   BB   AB   AB   0   2   1   1   1   1
+  23      1.45   AA   BB   AB   2   0   0   2   1   1
+  24      1.22   AA   AB   AB   2   0   1   1   1   1
+  25     -0.52   AA   BB   BB   2   0   0   2   0   2

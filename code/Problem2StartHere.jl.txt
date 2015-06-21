@@ -1,0 +1,63 @@
+#  Some alternative models for fitting SNP effects
+
+#  Read the datafile
+genomicdata =readdlm("BenHayesp110.txt",header=true)
+ytmp = float(genomicdata[1][:,2])
+Ztmp = float(genomicdata[1][:,6:11])
+
+nanim    = 13
+
+y = ytmp[1:nanim];
+X = ones(nanim,1);
+Z = Ztmp[1:nanim,:];
+neffects    = size(Z,2);
+nfix        = size(X,2);
+nloci       = int(neffects/2);
+istart      = nfix+1;     #these are pointers to assist in extracting subvectors
+iend        = nfix+neffects;
+
+sigmaSqE=1;
+R = diagm(fill(sigmaSqE,nanim))
+sigmaSqA=[2; 4; 3]
+G = diagm([2,2,4,4,3,3])
+
+ZGZp     = Z*G*Z'
+V        = ZGZp + R
+println("Fitting both alleles coded 0, 1 and 2")
+println("V=ZGZ'+R")
+println(V)
+
+#
+#Use generalized Least Squares
+#beta hat
+Vinv=inv(V)
+b0=pinv(X'Vinv*X)*X'*Vinv*y
+
+#u hat
+uhat=G*Z'*Vinv*(y-X*b0)
+
+##
+Xnew=hcat(X,Z[:,[1,3,5]])
+Xnew'Xnew\Xnew'y
+
+
+##MME
+Rinv=inv(R)
+Ginv=inv(G)
+lhs=[X'Rinv*X X'Rinv*Z
+	 Z'Rinv*X Z'Rinv*Z+Ginv]
+rhs=[X'Rinv*y
+	 Z'Rinv*y]
+lhs\rhs
+
+
+##numAnimal=3
+lhs=[X'X X'
+	 X eye(nanim)+inv(Z*G*Z')*sigmaSqE]
+rhs=[X'y
+	 y]
+lhs\rhs
+
+
+
+
